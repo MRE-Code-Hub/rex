@@ -48,7 +48,7 @@ Many NLR tools have been developed based on the assumption that the data format
 will follow a pseudo-standard definition. Data creators can adhere to the
 following specifications for seamless integration into
 `SAM <https://sam.nrel.gov>`_,
-`reV <https://www.nrel.gov/gis/renewable-energy-potential>`_,
+`reV <https://www.nlr.gov/gis/renewable-energy-potential>`_,
 `rex <https://github.com/NatLabRockies/rex/blob/main/README.rst>`_,
 and the data download APIs for
 `solar <https://developer.nrel.gov/docs/solar/nsrdb/>`_,
@@ -216,7 +216,7 @@ Data Location - NLR Users
 
 If you are at NLR, the easiest way to access this data is on the NLR
 high-performance computing system (HPC). Go to the `NLR HPC website
-<https://www.nrel.gov/hpc/>`_ and request access via an NLR project with an
+<https://www.nlr.gov/hpc/>`_ and request access via an NLR project with an
 HPC allocation. Once you are on the HPC, you can find that datasets in the
 ``/datasets/`` directory (e.g., run the linux command ``$ ls /datasets/``). Go
 through the directory tree until you find the .h5 files you are looking for.
