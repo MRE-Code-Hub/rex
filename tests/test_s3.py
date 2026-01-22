@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-pytests for accessing NREL .h5 files on the cloud via hsds/h5pyd
+pytests for accessing NLR .h5 files on the cloud via hsds/h5pyd
 """
 import numpy as np
 import xarray as xr

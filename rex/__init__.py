@@ -41,7 +41,7 @@ from rex.outputs import Outputs
 from rex.version import __version__
 
 __author__ = """Michael Rossol"""
-__email__ = "michael.rossol@nrel.gov"
+__email__ = "michael.rossol@nlr.gov"
 
 REXDIR = os.path.dirname(os.path.realpath(__file__))
 TESTDATADIR = os.path.join(os.path.dirname(REXDIR), 'tests', 'data')

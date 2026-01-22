@@ -1,9 +1,9 @@
 High Resolution Ocean Surface Wave Hindcast
 ===========================================
 
-This page describes some of the unique attributes of the NREL Wave Data. For
+This page describes some of the unique attributes of the NLR Wave Data. For
 instructions on how to access the data, see the docs page `here
-<https://nrel.github.io/rex/misc/examples.nrel_data.html>`_.
+<https://natlabrockies.github.io/rex/misc/examples.nlr_data.html>`_.
 
 Description
 -----------
@@ -23,7 +23,7 @@ design, to offshore aquaculture production and blue economy development, to
 coastal communities for extreme hazards mitigation,  to global shipping
 companies and fisherman for a better understanding of weather windows and
 seasonal wave climate patterns at a spatial resolution that does not exist
-elsewhere. The NREL Offshore Wind group has expressed significant interest in
+elsewhere. The NLR Offshore Wind group has expressed significant interest in
 this dataset for device structural modeling, array design, and economic
 modeling.
 
@@ -95,7 +95,7 @@ The SWAN and IEC valiable names are also provide under the attributes
 WaveX CLI
 ---------
 
-The `WaveX <https://nrel.github.io/rex/rex/rex.resource_extraction.wave_cli.html#wavex>`_
+The `WaveX <https://natlabrockies.github.io/rex/rex/rex.resource_extraction.wave_cli.html#wavex>`_
 command line utility provides the following options and commands:
 
 .. code-block:: bash
@@ -123,7 +123,7 @@ Direct Access via h5pyd
 
 Here is an example for if you would rather access the US Wave data directly
 using h5pyd. However, we recommend using the ``rex`` utilities described in the
-docs page `here <https://nrel.github.io/rex/misc/examples.nrel_data.html>`_.
+docs page `here <https://natlabrockies.github.io/rex/misc/examples.nlr_data.html>`_.
 
 .. code-block:: python
 
@@ -180,8 +180,8 @@ Please cite the most relevant publication below when referencing this dataset:
 Disclaimer and Attribution
 --------------------------
 
-The National Renewable Energy Laboratory (“NREL”) is operated for the U.S.
-Department of Energy (“DOE”) by the Alliance for Sustainable Energy, LLC
+The National Laboratory of the Rockies (NLR) is operated for the U.S.
+Department of Energy (“DOE”) by the Alliance for Energy Innovation, LLC
 ("Alliance"). Pacific Northwest National Laboratory (PNNL) is managed and
 operated by Battelle Memorial Institute ("Battelle") for DOE. As such the
 following rules apply:
@@ -193,19 +193,19 @@ FROM ANY EXPRESS OR IMPLIED WARRANTY OF ANY KIND, INCLUDING BUT NOT LIMITED TO
 ANY IMPLIED WARRANTIES SUCH AS MERCHANTABILITY AND/OR FITNESS FOR ANY
 PARTICULAR PURPOSE. Furthermore, NEITHER THE UNITED STATES GOVERNMENT NOR ANY
 OF ITS ASSOCITED ENTITES OR CONTRACTORS INCLUDING BUT NOT LIMITED TO THE
-DOE/PNNL/NREL/BATTELLE/ALLIANCE ASSUME ANY LEGAL LIABILITY OR RESPONSIBILITY
+DOE/PNNL/NLR/BATTELLE/ALLIANCE ASSUME ANY LEGAL LIABILITY OR RESPONSIBILITY
 FOR THE ACCURACY, COMPLETENESS, OR USEFULNESS OF THE DATA, OR REPRESENT THAT
 ITS USE WOULD NOT INFRINGE PRIVATELY OWNED RIGHTS. NO ENDORSEMENT OF THE DATA
 OR ANY REPRESENTATIONS MADE IN CONNECTION WITH THE DATA IS PROVIDED. IN NO
 EVENT SHALL ANY PARTY BE LIABLE FOR ANY DAMAGES, INCLUDING BUT NOT LIMITED TO
 SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES ARISING FROM THE PROVISION OF THIS
 DATA; TO THE EXTENT PERMITTED BY LAW USER AGREES TO INDEMNIFY
-DOE/PNNL/NREL/BATTELLE/ALLIANCE AND ITS SUBSIDIARIES, AFFILIATES, OFFICERS,
+DOE/PNNL/NLR/BATTELLE/ALLIANCE AND ITS SUBSIDIARIES, AFFILIATES, OFFICERS,
 AGENTS, AND EMPLOYEES AGAINST ANY CLAIM OR DEMAND RELATED TO USER'S USE OF THE
 DATA, INCLUDING ANY REASONABLE ATTORNEYS FEES INCURRED.
 
 The user is granted the right, without any fee or cost, to use or copy the
 Data, provided that this entire notice appears in all copies of the Data. In
 the event that user engages in any scientific or technical publication
-utilizing this data user agrees to credit DOE/PNNL/NREL/BATTELLE/ALLIANCE in
+utilizing this data user agrees to credit DOE/PNNL/NLR/BATTELLE/ALLIANCE in
 any such publication consistent with respective professional practice.

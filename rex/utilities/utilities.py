@@ -1153,7 +1153,7 @@ def import_io_module_or_fail(module_name, file_path=None):
     maybe_fn = "" if file_path is None else f': "{file_path}"'
     maybe_help_text = ""
     if module_name == "h5pyd":
-        maybe_help_text = ", try `pip install NREL-rex[hsds]`"
+        maybe_help_text = ", try `pip install NLR-rex[hsds]`"
     try:
         # pylint: disable=import-outside-toplevel
         module = importlib.import_module(module_name)

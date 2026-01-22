@@ -40,7 +40,7 @@ logger = logging.getLogger(__name__)
 @click.option('--buoy', '-b', is_flag=True,
               help="Boolean flag to use access virtual buoy data")
 @click.option('--eagle', '-hpc', is_flag=True,
-              help="Boolean flag to use access data on NRELs HPC vs. via HSDS")
+              help="Boolean flag to use access data on NLRs HPC vs. via HSDS")
 @click.option('--log_file', '-log', default=None, type=click.Path(),
               show_default=True,
               help='Path to .log file, if None only log to stdout')

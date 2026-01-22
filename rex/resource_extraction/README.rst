@@ -17,7 +17,7 @@ Command Line Interfaces (CLIs)
 
 They extraction handlers are also available from the command line:
 
-- `rex <https://nrel.github.io/rex/rex/rex.resource_extraction.resource_cli.html#rex>`_
-- `NSRDBX <https://nrel.github.io/rex/rex/rex.resource_extraction.nsrdb_cli.html#nsrdbx>`_
-- `WINDX <https://nrel.github.io/rex/rex/rex.resource_extraction.wind_cli.html#windx>`_
-- `MultiYearX <https://nrel.github.io/rex/rex/rex.resource_extraction.multi_year_resource_cli.html#multiyearx>`_
+- `rex <https://natlabrockies.github.io/rex/rex/rex.resource_extraction.resource_cli.html#rex>`_
+- `NSRDBX <https://natlabrockies.github.io/rex/rex/rex.resource_extraction.nsrdb_cli.html#nsrdbx>`_
+- `WINDX <https://natlabrockies.github.io/rex/rex/rex.resource_extraction.wind_cli.html#windx>`_
+- `MultiYearX <https://natlabrockies.github.io/rex/rex/rex.resource_extraction.multi_year_resource_cli.html#multiyearx>`_

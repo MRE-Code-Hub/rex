@@ -1,7 +1,7 @@
 Using Xarray
 ============
 
-As of rex ``v0.2.99``, you can read `NREL data files <https://nrel.github.io/rex/misc/examples.nrel_data.html>`_
+As of rex ``v0.2.99``, you can read `NLR data files <https://natlabrockies.github.io/rex/misc/examples.nlr_data.html>`_
 using the popular open-source library `xarray <https://docs.xarray.dev/en/stable/index.html>`_. You can learn
 more about the benefits of using ``xarray`` `here <https://docs.xarray.dev/en/stable/getting-started-guide/why-xarray.html>`_.
 
@@ -11,7 +11,7 @@ Basic Usage
 Opening a single file
 ^^^^^^^^^^^^^^^^^^^^^
 
-To read in an NREL data file, simply ``pip install NREL-rex`` and then supply ``engine="rex"`` to the xarray
+To read in an NLR data file, simply ``pip install NLR-rex`` and then supply ``engine="rex"`` to the xarray
 `open_dataset <https://docs.xarray.dev/en/stable/generated/xarray.open_dataset.html#xarray-open-dataset>`_
 function:
 
@@ -217,7 +217,7 @@ For more information on using dask with xarray, see `this <https://docs.xarray.d
 Opening Multiple Files
 ^^^^^^^^^^^^^^^^^^^^^^
 
-You can use ``xr.open_mfdataset`` to open multiple NREL data files at once.
+You can use ``xr.open_mfdataset`` to open multiple NLR data files at once.
 
 .. IMPORTANT::
     By default, ``xarray`` does not assume that the coordinate data (i.e. meta variables)
@@ -294,8 +294,8 @@ Remote Files
 ------------
 
 You can also use ``xarray`` to open remote files directly. If you do not have
-access to the NREL HPC, this guide is for you. See instructions
-`here <file:///Users/gbuster/code/rex/docs/_build/html/misc/examples.nrel_data.html#data-location-external-users>`_
+access to the NLR HPC, this guide is for you. See instructions
+`here <file:///Users/gbuster/code/rex/docs/_build/html/misc/examples.nlr_data.html#data-location-external-users>`_
 on where to find these file paths on S3 and HSDS.
 
 Files on S3
@@ -353,7 +353,7 @@ Files on HSDS
 ^^^^^^^^^^^^^
 
 A more performant option is to use HSDS (see
-`this guide <https://nrel.github.io/rex/misc/examples.hsds.html#setting-up-a-local-hsds-server>`_
+`this guide <https://natlabrockies.github.io/rex/misc/examples.hsds.html#setting-up-a-local-hsds-server>`_
 on setting up your own local hsds server):
 
 .. code-block:: python
@@ -606,4 +606,4 @@ Case Studies
 Once you have opened the file with ``xarray``, you can take full advantage of the library's
 powerful features to perform data analysis tasks. Check out some examples of this below:
 
-- `Daily Aggregations using Xarray <https://github.com/NREL/rex/blob/main/examples/xarray/daily_agg.ipynb>`_
+- `Daily Aggregations using Xarray <https://github.com/NatLabRockies/rex/blob/main/examples/xarray/daily_agg.ipynb>`_
