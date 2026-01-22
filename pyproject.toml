@@ -6,20 +6,20 @@ requires = [
 build-backend = 'setuptools.build_meta'
 
 [project]
-name="NREL-rex"
+name="NLR-rex"
 dynamic = ["version"]
-description = "National Renewable Energy Laboratory's (NREL's) REsource eXtraction tool: rex"
+description = "National Laboratory of the Rockies' (NLR's) REsource eXtraction tool: rex"
 readme = {file = "README.rst", content-type = "text/x-rst"}
 authors = [
-  {name = "Michael Rossol", email = "michael.rossol@nrel.gov"},
+  {name = "Michael Rossol", email = "michael.rossol@nlr.gov"},
 ]
 maintainers = [
-  {name = "Grant Buster", email = "gbuster@nrel.gov"},
-  {name = "Paul Pinchuk", email = "ppinchuk@nrel.gov"},
-  {name = "Brandon Benton", email = "brandon.benton@nrel.gov"},
+  {name = "Grant Buster", email = "gbuster@nlr.gov"},
+  {name = "Paul Pinchuk", email = "ppinchuk@nlr.gov"},
+  {name = "Brandon Benton", email = "brandon.benton@nlr.gov"},
 ]
 license = "BSD-3-Clause"
-keywords = ["rex", "NREL"]
+keywords = ["rex", "NLR"]
 requires-python = ">= 3.9"
 classifiers=[
   "Development Status :: 4 - Beta",
@@ -72,8 +72,8 @@ build = [
 
 [project.urls]
 homepage = "https://www2.nrel.gov/gis/renewable-energy-potential"
-documentation = "https://nrel.github.io/rex/"
-repository = "https://github.com/NREL/rex"
+documentation = "https://natlabrockies.github.io/rex/"
+repository = "https://github.com/NatLabRockies/rex"
 
 [project.scripts]
 rex = "rex.resource_extraction.resource_cli:main"

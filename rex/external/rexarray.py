@@ -229,7 +229,7 @@ class RexArrayWrapper(BackendArray):
 
 
 class RexStore(AbstractDataStore):
-    """Store for reading NREL-rex style data via h5py"""
+    """Store for reading NLR-rex style data via h5py"""
 
     __slots__ = ("_filename", "_group", "manager", "mode", "is_remote",
                  "lock", "_ds_shape", "hsds")
@@ -569,15 +569,15 @@ class RexStore(AbstractDataStore):
 
 
 class RexBackendEntrypoint(BackendEntrypoint):
-    """Backend for NREL rex-style files
+    """Backend for NLR rex-style files
 
     See Also
     --------
     backends.RexStore
     """
 
-    description = "Open NREL-rex style HDF5 files in Xarray"
-    url = ("https://nrel.github.io/rex/_autosummary/"
+    description = "Open NLR-rex style HDF5 files in Xarray"
+    url = ("https://natlabrockies.github.io/rex/_autosummary/"
            "rex.external.rexarray.RexBackendEntrypoint.html")
     open_dataset_parameters = ["filename_or_obj", "drop_variables", "group",
                                "lock", "h5_driver", "h5_driver_kwds", "hsds",
@@ -825,7 +825,7 @@ class RexBackendEntrypoint(BackendEntrypoint):
 
 
 def open_mfdataset_hsds(paths, **kwargs):
-    """Open multiple NREL spatiotemporal datasets stored in cloud-optimized
+    """Open multiple NLR spatiotemporal datasets stored in cloud-optimized
     HSDS paths into an xarray dataset object.
 
     Parameters
@@ -833,8 +833,9 @@ def open_mfdataset_hsds(paths, **kwargs):
     paths : str | sequence of str
         Either a string glob in the form "/path/to/my/hsds/files/*.h5"
         or an explicit list of HSDS file paths to open. HSDS filepaths
-        typically start with "/nrel/*" and can be found using h5pyd. See `this
-        instruction set <https://nrel.github.io/rex/misc/examples.hsds.html>`_
+        typically start with "/nrel/*" and can be found using h5pyd. See
+        `this instruction set
+        <https://natlabrockies.github.io/rex/misc/examples.hsds.html>`_
         for more details on HSDS files.
     **kwargs
         Keyword-value argument pairs to pass to :func:`open_mfdataset`.

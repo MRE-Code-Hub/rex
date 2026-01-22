@@ -13,7 +13,7 @@ jobs:
       - name: checkout reV
         uses: actions/checkout@v3
         with:
-          repository: nrel/reV
+          repository: NatLabRockies/reV
           fetch-depth: 1
           path: reV
       - name: Set up Python

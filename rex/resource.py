@@ -512,9 +512,10 @@ class ResourceDataset:
                 msg += (' Detected OSError/IOError from h5pyd. '
                         'This is not a rex error and please do not submit '
                         'a bug report. this is likely due to HSDS server '
-                        'limits, especially if you are using an NREL '
+                        'limits, especially if you are using an NLR '
                         'developer API key. For more details, see: '
-                        'https://nrel.github.io/rex/misc/examples.hsds.html')
+                        'https://natlabrockies.github.io/rex/misc/'
+                        'examples.hsds.html')
             logger.error(msg)
             raise ResourceRuntimeError(msg) from e
 
@@ -1110,7 +1111,7 @@ class BaseResource(BaseDatasetIterable):
 
     @classmethod
     def open_file(cls, file_path, mode='r', hsds=False, hsds_kwargs=None):
-        """Open a filepath to an h5, s3, or hsds nrel resource file with the
+        """Open a filepath to an h5, s3, or hsds NLR resource file with the
         appropriate python object.
 
         Parameters

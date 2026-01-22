@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-pytests for accessing NREL .h5 files on the cloud via hsds/h5pyd
+pytests for accessing NLR .h5 files on the cloud via hsds/h5pyd
 
 Note that this file cannot be named "test_*.py" because it is run with a
 separate github action that sets up a local hsds server before running the

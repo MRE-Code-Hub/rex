@@ -1,9 +1,9 @@
-NREL Wind Datasets
-==================
+NLR Wind Datasets
+=================
 
-This page describes some of the unique attributes of NREL wind datasets. For
+This page describes some of the unique attributes of NLR wind datasets. For
 instructions on how to access the data, see the docs page `here
-<https://nrel.github.io/rex/misc/examples.nrel_data.html>`_.
+<https://natlabrockies.github.io/rex/misc/examples.nlr_data.html>`_.
 
 WIND Toolkit v1.0.0
 -------------------
@@ -41,32 +41,32 @@ provided in three sets of files:
 
 Note that the WIND Toolkit version 1.0.0 (described above) includes the 2007-2013 years of the files located at the following hsds domain: `/nrel/wtk/conus/`
 
-The next generation WIND Toolkit version 1.2.0 includes years 2018-2020 in the same HSDS directory `/nrel/wtk/conus/` but with different meta data. 
+The next generation WIND Toolkit version 1.2.0 includes years 2018-2020 in the same HSDS directory `/nrel/wtk/conus/` but with different meta data.
 
 
 WIND Toolkit References
 ***********************
 
-For more information about the WIND Toolkit please see the `website. <https://www.nrel.gov/grid/wind-toolkit.html>`_
+For more information about the WIND Toolkit please see the `website. <https://www.nlr.gov/grid/wind-toolkit.html>`_
 Users of the WIND Toolkit should use the following citations:
 
-- `Draxl, C., B.M. Hodge, A. Clifton, and J. McCaa. 2015. Overview and Meteorological Validation of the Wind Integration National Dataset Toolkit (Technical Report, NREL/TP-5000-61740). Golden, CO: National Renewable Energy Laboratory. <https://www.nrel.gov/docs/fy15osti/61740.pdf>`_
+- `Draxl, C., B.M. Hodge, A. Clifton, and J. McCaa. 2015. Overview and Meteorological Validation of the Wind Integration National Dataset Toolkit (Technical Report, NREL/TP-5000-61740). Golden, CO: National Renewable Energy Laboratory. <https://www.nlr.gov/docs/fy15osti/61740.pdf>`_
 - `Draxl, C., B.M. Hodge, A. Clifton, and J. McCaa. 2015. "The Wind Integration National Dataset (WIND) Toolkit." Applied Energy 151: 355366. <https://www.sciencedirect.com/science/article/pii/S0306261915004237?via%3Dihub>`_
-- `Lieberman-Cribbin, W., C. Draxl, and A. Clifton. 2014. Guide to Using the WIND Toolkit Validation Code (Technical Report, NREL/TP-5000-62595). Golden, CO: National Renewable Energy Laboratory. <https://www.nrel.gov/docs/fy15osti/62595.pdf>`_
-- `King, J., A. Clifton, and B.M. Hodge. 2014. Validation of Power Output for the WIND Toolkit (Technical Report, NREL/TP-5D00-61714). Golden, CO: National Renewable Energy Laboratory. <https://www.nrel.gov/docs/fy14osti/61714.pdf>`_
+- `Lieberman-Cribbin, W., C. Draxl, and A. Clifton. 2014. Guide to Using the WIND Toolkit Validation Code (Technical Report, NREL/TP-5000-62595). Golden, CO: National Renewable Energy Laboratory. <https://www.nlr.gov/docs/fy15osti/62595.pdf>`_
+- `King, J., A. Clifton, and B.M. Hodge. 2014. Validation of Power Output for the WIND Toolkit (Technical Report, NREL/TP-5D00-61714). Golden, CO: National Renewable Energy Laboratory. <https://www.nlr.gov/docs/fy14osti/61714.pdf>`_
 
 
 2023 National Offshore Wind data set (NOW-23)
 ---------------------------------------------
- 
+
 The 2023 National Offshore Wind data set (NOW-23) is the latest wind resource data set for offshore regions in the United States, which supersedes, for its offshore component, the Wind Integration National Dataset (WIND) Toolkit v1.0.0, which was published about a decade ago and is currently one of the primary resources for stakeholders conducting wind resource assessments in the continental United States.
 
 The NOW-23 data set was produced using the Weather Research and Forecasting Model (WRF) version 4.2.1. A regional approach was used: for each offshore region, the WRF setup was selected based on validation against available observations. The WRF model was initialized with the European Centre for Medium Range Weather Forecasts 5 Reanalysis (ERA-5) data set, using a 6-hour refresh rate. The model is configured with an initial horizontal grid spacing of 6 km and an internal nested domain that refined the spatial resolution to 2 km. The model is run with 61 vertical levels, with 12 levels in the lower 300m of the atmosphere, stretching from 5 m to 45 m in height. The MYNN planetary boundary layer and surface layer schemes were used the North Atlantic, Mid Atlantic, Great Lakes, Hawaii, and North Pacific regions. On the other hand, using the YSU planetary boundary layer and MM5 surface layer schemes resulted in a better skill in the South Atlantic, Gulf of Mexico, and South Pacific regions. A more detailed description of the WRF model setup can be found in the WRF namelist files linked at the bottom of this page.
 
 For all regions, the NOW-23 data set coverage starts on January 1, 2000. For Hawaii and the North Pacific regions, NOW-23 goes until December 31, 2019. For the South Pacific region, the model goes until 31 December, 2022. For all other regions, the model covers until December 31, 2020. Outputs are available at 5 minute resolution, and for all regions we have also included output files at hourly resolution.
- 
+
 The following variables are available:
- 
+
 -Planetary boundary layer height (m)
 -Pressure at 0m, 100m, 200m, and 300m (Pa)
 -Temperature at 2m, 10m, 20-m intervals between 20m and 300m, 400m, and 500m (°C)
@@ -104,7 +104,7 @@ Bodini, N., Optis, M., Redfern, S., Rosencrans, D., Rybchuk, A., Lundquist, J. K
 WINDX CLI
 ---------
 
-The `WINDX <https://nrel.github.io/rex/rex/rex.resource_extraction.wind_cli.html#windx>`_
+The `WINDX <https://natlabrockies.github.io/rex/rex/rex.resource_extraction.wind_cli.html#windx>`_
 command line utility provides the following options and commands:
 
 .. code-block:: bash

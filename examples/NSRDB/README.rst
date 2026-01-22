@@ -3,7 +3,7 @@ National Solar Radiation Database (NSRDB)
 
 This page describes some of the unique attributes of the NSRDB. For
 instructions on how to access the data, see the docs page `here
-<https://nrel.github.io/rex/misc/examples.nrel_data.html>`_.
+<https://natlabrockies.github.io/rex/misc/examples.nlr_data.html>`_.
 
 Description
 -----------
@@ -71,7 +71,7 @@ The following variables are provided by the NSRDB:
 NSRDB CLI
 ---------
 
-The `NSRDBX <https://nrel.github.io/rex/rex/rex.resource_extaction.nsrdb_cli.html#nsrdbx>`_
+The `NSRDBX <https://natlabrockies.github.io/rex/rex/rex.resource_extaction.nsrdb_cli.html#nsrdbx>`_
 command line utility provides the following options and commands:
 
 .. code-block:: bash
@@ -97,7 +97,7 @@ command line utility provides the following options and commands:
 References
 ----------
 
-For more information about the NSRDB please see the `website <https://nsrdb.nrel.gov/>`_
+For more information about the NSRDB please see the `website <https://nsrdb.nlr.gov/>`_
 Users of the NSRDB should please cite:
 
 - `Sengupta, M., Y. Xie, A. Lopez, A. Habte, G. Maclaurin, and J. Shelby. 2018. "The National Solar Radiation Data Base (NSRDB)." Renewable and Sustainable Energy Reviews  89 (June): 51-60. <https://www.sciencedirect.com/science/article/pii/S136403211830087X?via%3Dihub>`_

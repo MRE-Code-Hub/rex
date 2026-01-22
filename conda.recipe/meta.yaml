@@ -1,5 +1,5 @@
 package:
-    name: nrel-rex
+    name: nlr-rex
     version: {{ environ.get('GIT_DESCRIBE_TAG','').replace('v', '', 1) }}
 
 source:
@@ -48,8 +48,8 @@ requirements:
     - h5pyd
 
 about:
-  home: "https://github.com/NREL/rex"
+  home: "https://github.com/NatLabRockies/rex"
   license: BSD 3-Clause
   summary: "REsource eXtraction (rex) tool"
-  doc_url: "https://nrel.github.io/rex"
-  dev_url: "https://github.com/NREL/rex"
+  doc_url: "https://natlabrockies.github.io/rex"
+  dev_url: "https://github.com/NatLabRockies/rex"
