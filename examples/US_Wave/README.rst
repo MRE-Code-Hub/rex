@@ -3,7 +3,7 @@ High Resolution Ocean Surface Wave Hindcast
 
 This page describes some of the unique attributes of the NLR Wave Data. For
 instructions on how to access the data, see the docs page `here
-<https://natlabrockies.github.io/rex/misc/examples.nrel_data.html>`_.
+<https://natlabrockies.github.io/rex/misc/examples.nlr_data.html>`_.
 
 Description
 -----------
