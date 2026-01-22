@@ -416,7 +416,7 @@ def test_map_hsds_files():
     Test map hsds files method
     """
     files = [f'/nrel/US_wave/West_Coast/West_Coast_wave_{year}.h5'
-             for year in range(1979, 2011)]
+             for year in range(1979, 2021)]
     hsds_kwargs = {'endpoint': 'https://developer.nrel.gov/api/hsds',
                    'api_key': 'oHP7dGu4VZeg4rVo8PZyb5SVmYigedRHxi3OfiqI'}
     path = '/nrel/US_wave/West_Coast/West_Coast_wave_*.h5'
