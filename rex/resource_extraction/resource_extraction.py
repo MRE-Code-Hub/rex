@@ -1151,7 +1151,7 @@ class ResourceX(BaseDatasetIterable):
 
         # you need to make sure all the lons in a column are equal otherwise
         # imperfect grid sorting happens
-        lons = df['lons'].values.reshape(shape, order='F')
+        lons = df['lons'].to_numpy(copy=True).reshape(shape, order='F')
         lons[:] = lons.mean(axis=0)
         df['lons'] = lons.flatten(order='F')
         df = df.sort_values(['lons', 'lats'])
@@ -1159,8 +1159,8 @@ class ResourceX(BaseDatasetIterable):
         iflat = df.index.values
         raster_index = iflat.reshape(shape, order='F')
 
-        lons = df['lons'].values.reshape(shape, order='F')
-        lats = df['lats'].values.reshape(shape, order='F')
+        lons = df['lons'].to_numpy(copy=False).reshape(shape, order='F')
+        lats = df['lats'].to_numpy(copy=False).reshape(shape, order='F')
 
         # make sure lons are ordered correctly
         if (np.diff(lons.mean(axis=0)) < 0).sum() > 0.5 * lons.shape[1]:
