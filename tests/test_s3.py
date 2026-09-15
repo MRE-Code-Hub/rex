@@ -9,7 +9,7 @@ from rex import NSRDB, WindResource, MultiYearResource
 
 def test_nsrdb():
     """Test retrieving NSRDB data"""
-    fp = "s3://nrel-pds-nsrdb/current/nsrdb_1998.h5"
+    fp = "s3://nrel-pds-nsrdb/GOES/aggregated/v4.0.0/nsrdb_1998.h5"
     with NSRDB(fp) as res:
         dsets = res.dsets
         ghi = res['ghi', 0:10, 0]
@@ -51,7 +51,7 @@ def test_sup3rcc():
 
 def test_multiyear():
     """Test retrieving multi year NSRDB data"""
-    files = ["s3://nrel-pds-nsrdb/current/nsrdb_199*.h5"]
+    files = ["s3://nrel-pds-nsrdb/GOES/aggregated/v4.0.0/nsrdb_199*.h5"]
     with MultiYearResource(files) as res:
         dsets = res.dsets
         ghi = res['ghi', 0:10, 0]
@@ -59,8 +59,8 @@ def test_multiyear():
         assert isinstance(dsets, list)
         assert isinstance(ghi, np.ndarray)
 
-    files = ["s3://nrel-pds-nsrdb/current/nsrdb_1998.h5",
-             "s3://nrel-pds-nsrdb/current/nsrdb_1999.h5"]
+    files = ["s3://nrel-pds-nsrdb/GOES/aggregated/v4.0.0/nsrdb_1998.h5",
+             "s3://nrel-pds-nsrdb/GOES/aggregated/v4.0.0/nsrdb_1999.h5"]
     with xr.open_mfdataset(files, engine="rex") as ds:
         xr_ghi = ds["ghi"].isel(time=slice(0, 10), gid=0)
         assert np.allclose(xr_ghi, ghi)
