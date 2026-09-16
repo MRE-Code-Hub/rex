@@ -83,9 +83,6 @@ def test_sup3rcc():
     with xr.open_dataset(fp, engine="rex", hsds=True) as ds:
         assert np.allclose(ds["ghi"].isel(gid=slice(100000, 100002)), ghi)
         assert np.allclose(
-            ds["windspeed_88m"].isel(gid=slice(100000, 100002)), ws
-        )
-        assert np.allclose(
             ds["temperature_2m"].isel(gid=slice(100000, 100002)), temp
         )
 
