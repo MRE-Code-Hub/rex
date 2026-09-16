@@ -13,6 +13,9 @@ on:
 jobs:
   run:
     name: Codecov
+    environment:
+      name: codecov
+      url: https://app.codecov.io/gh/NatLabRockies/gaps
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
