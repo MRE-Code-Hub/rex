@@ -17,6 +17,8 @@ jobs:
       name: codecov
       url: https://app.codecov.io/gh/NatLabRockies/gaps
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
     - uses: actions/checkout@v2
     - name: Setup Python
