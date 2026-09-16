@@ -32,7 +32,7 @@ def test_nsrdb():
         dsets = res.dsets
         ghi = res['ghi', :, int(1e5)]
 
-    assert len(dsets) == 28
+    assert len(dsets) == 22
     assert not any(ghi < 0)
     assert all(ghi < 1300)
     assert any(ghi > 800)
@@ -68,6 +68,9 @@ def test_sup3rcc():
         temp = res['temperature_2m', :, 100000:100002]
 
     assert len(dsets) == 14
+    assert isinstance(ghi, np.ndarray)
+    assert isinstance(ws, np.ndarray)
+    assert isinstance(temp, np.ndarray)
     assert not (ghi < 0).any()
     assert (ghi < 1300).all()
     assert (ghi > 800).any()
@@ -79,6 +82,9 @@ def test_sup3rcc():
 
     with xr.open_dataset(fp, engine="rex", hsds=True) as ds:
         assert np.allclose(ds["ghi"].isel(gid=slice(100000, 100002)), ghi)
+        assert np.allclose(
+            ds["temperature_2m"].isel(gid=slice(100000, 100002)), temp
+        )
 
 
 @pytest.mark.parametrize('fps', ["/nrel/wtk/conus/wtk_conus_200[8,9].h5",
