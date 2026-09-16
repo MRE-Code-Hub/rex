@@ -1,12 +1,6 @@
-name: h5pyd tests
+name: S3 tests
 
 on: pull_request
-
-env:
-  AWS_S3_NO_SIGN_REQUEST: 1
-  AWS_S3_GATEWAY: http://s3.us-west-2.amazonaws.com
-  BUCKET_NAME: nrel-pds-hsds
-  HS_ENDPOINT: http://localhost:5101
 
 jobs:
   build:
