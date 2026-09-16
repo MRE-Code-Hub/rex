@@ -15,7 +15,11 @@ jobs:
       - name: checkout rex
         uses: actions/checkout@v3
         with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 1
+          fetch-tags: true
           path: rex
+          persist-credentials: false
       - name: checkout reVX
         uses: actions/checkout@v2
         with:
