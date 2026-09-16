@@ -6,6 +6,7 @@ from click.testing import CliRunner
 import h5py
 import numpy as np
 import os
+import pandas as pd
 import pytest
 import tempfile
 import traceback
@@ -56,7 +57,7 @@ def create_var_attrs(h5_file, t_chunk=(8 * 7 * 24)):
         elif var == 'coordinates':
             var_attrs.loc[var, 'chunks'] = None
         else:
-            var_attrs.loc[var, 'chunks'] = (t_chunk, 10)
+            var_attrs.at[var, 'chunks'] = (t_chunk, 10)
 
     return var_attrs
 
@@ -103,6 +104,20 @@ def test_to_records_array():
     for c in truth.dtype.names:
         msg = "{} did not get converted propertly!".format(c)
         assert np.all(test[c] == truth[c]), msg
+
+
+def test_to_records_array_string_dtype():
+    """Test pandas nullable string dtype conversion to records array."""
+    meta = pd.DataFrame({
+        'name': pd.Series(['alpha', 'beta'], dtype='string'),
+        'gid': [1, 2],
+    })
+
+    test = to_records_array(meta)
+
+    assert test.dtype['name'].kind == 'S'
+    assert np.all(test['name'] == np.array([b'alpha', b'beta']))
+    assert np.all(test['gid'] == np.array([1, 2], dtype=np.int16))
 
 
 @pytest.mark.parametrize('t_chunk', [None, 8 * 7 * 24])

@@ -13,7 +13,9 @@ import importlib
 from fnmatch import fnmatch
 import numpy as np
 import pandas as pd
-from pandas.api.types import CategoricalDtype
+from pandas.api.types import (CategoricalDtype, is_bool_dtype,
+                              is_float_dtype, is_integer_dtype,
+                              is_object_dtype, is_string_dtype)
 import re
 from scipy.spatial import cKDTree
 import time
@@ -975,18 +977,20 @@ def get_dtype(col):
     if isinstance(dtype, CategoricalDtype):
         col = col.astype(type(col.values[0]))
         out = get_dtype(col)
-    elif np.issubdtype(dtype, np.floating):
+    elif is_float_dtype(dtype):
         out = 'float32'
-    elif np.issubdtype(dtype, np.integer):
+    elif is_integer_dtype(dtype):
         if col.max() < 32767:
             out = 'int16'
         else:
             out = 'int32'
-    elif np.issubdtype(dtype, np.object_):
+    elif is_bool_dtype(dtype):
+        out = bool
+    elif is_string_dtype(dtype) or is_object_dtype(dtype):
         size = int(col.astype(str).str.len().max())
         out = 'S{:}'.format(size)
     else:
-        out = dtype
+        out = getattr(dtype, 'numpy_dtype', dtype)
 
     return out
 

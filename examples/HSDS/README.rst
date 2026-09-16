@@ -30,14 +30,14 @@ NLR Developer API
 -----------------
 
 The easiest way to get started with HSDS is to get a developer API key via the
-`NLR Developer Network <https://developer.nrel.gov/signup/>`_. Once you have
+`NLR Developer Network <https://developer.nlr.gov/signup/>`_. Once you have
 your API key, create an HSDS config file at ``~/.hscfg`` with the following
 entries (make sure you update the ``hs_api_key`` entry):
 
 .. code-block:: bash
 
   # NLR dev api
-  hs_endpoint = https://developer.nrel.gov/api/hsds
+  hs_endpoint = https://developer.nlr.gov/api/hsds
   hs_api_key = your_api_key_goes_here
 
 You should then be able to access NLR hsds data using ``rex`` and ``h5pyd`` as

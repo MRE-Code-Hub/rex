@@ -116,7 +116,7 @@ def test_single_depth(sample_meta):
 def test_interpolation_extrapolation_and_preload(sample_meta):
     """Test interpolation, extrapolation, and SAM preload of data. """
 
-    time_index = pd_date_range(start='1/1/2011', end='1/1/2012', freq='H')
+    time_index = pd_date_range(start='1/1/2011', end='1/1/2012', freq='h')
     dsets = ["temperature_3500m", "temperature_4500m", "potential_MW"]
     with tempfile.TemporaryDirectory() as td:
         fp = os.path.join(td, 'outputs.h5')

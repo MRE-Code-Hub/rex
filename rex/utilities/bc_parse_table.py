@@ -89,13 +89,14 @@ def parse_bc_table(bc_df, gids):
 
     bc_fun_kwargs = {}
     for col in bc_df.columns:
+        series = bc_df.loc[gid_arr[bool_bc], col]
 
         # load serialized lists from string columns in bc_df into nested lists
-        sample = bc_df[col].values[0]
+        sample = series.to_numpy(copy=False)[0]
         if isinstance(sample, str) and '[' in sample and ']' in sample:
-            bc_df.loc[:, col] = bc_df[col].apply(json.loads)
+            series = series.apply(json.loads)
 
-        arr = bc_df.loc[gid_arr[bool_bc], col].values
+        arr = series.to_numpy()
 
         # nested lists in bc_df converted to arr of shape (space, N)
         if isinstance(arr[0], (list, tuple)):

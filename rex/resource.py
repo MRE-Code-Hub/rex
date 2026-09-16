@@ -1285,7 +1285,8 @@ class BaseResource(BaseDatasetIterable):
         time_index = ResourceDataset.extract(time_index, ds_slice[0],
                                              unscale=False)
         try:
-            datetime_index = pd.to_datetime(time_index.astype(str))
+            datetime_index = (pd.to_datetime(time_index.astype(str))
+                              .as_unit('ns'))  # retain pandas 2.0 behavior
         except (pd.errors.OutOfBoundsDatetime, dateutil.parser.ParserError):
             return time_index
 

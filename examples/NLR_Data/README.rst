@@ -51,10 +51,10 @@ following specifications for seamless integration into
 `reV <https://www.nlr.gov/gis/renewable-energy-potential>`_,
 `rex <https://github.com/NatLabRockies/rex/blob/main/README.rst>`_,
 and the data download APIs for
-`solar <https://developer.nrel.gov/docs/solar/nsrdb/>`_,
-`wind <https://developer.nrel.gov/docs/wind/wind-toolkit/>`_,
-`wave <https://developer.nrel.gov/docs/wave/>`_, and
-`climate <https://developer.nrel.gov/docs/climate/ncdb/>`_ data, to name a few.
+`solar <https://developer.nlr.gov/docs/solar/nsrdb/>`_,
+`wind <https://developer.nlr.gov/docs/wind/wind-toolkit/>`_,
+`wave <https://developer.nlr.gov/docs/wave/>`_, and
+`climate <https://developer.nlr.gov/docs/climate/ncdb/>`_ data, to name a few.
 
 - The domain is defined at the data product level. The domain naming convention
   is defined in a product agnostic way and follows the format:
@@ -64,7 +64,7 @@ and the data download APIs for
       underlying model variations. E.g. ``/nrel/nsrdb/GOES/conus/v4.0.0/``
 - Each data product/domain will be represented by a single endpoint in the
   download APIs. E.g. the domain above is made accessible via
-  `https://developer.nrel.gov/docs/solar/nsrdb/nsrdb-GOES-conus-v4-0-0-download <https://developer.nrel.gov/docs/solar/nsrdb/nsrdb-GOES-conus-v4-0-0-download/>`__
+  `https://developer.nlr.gov/docs/solar/nsrdb/nsrdb-GOES-conus-v4-0-0-download <https://developer.nlr.gov/docs/solar/nsrdb/nsrdb-GOES-conus-v4-0-0-download/>`__
 - Each data product/domain contains a set of HDF5 files, each holding a single
   year of data. - E.g.
 
