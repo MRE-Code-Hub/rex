@@ -27,7 +27,7 @@ def test_file_list():
 
 def test_nsrdb():
     """Test retrieving NSRDB data"""
-    fp = '/nrel/nsrdb/india/nsrdb_india_2014.h5'
+    fp = '/nrel/nsrdb/GOES/conus/v4.0.0/nsrdb_conus_2020.h5'
     with NSRDB(fp, hsds=True) as res:
         dsets = res.dsets
         ghi = res['ghi', :, int(1e5)]
@@ -68,6 +68,9 @@ def test_sup3rcc():
         temp = res['temperature_2m', :, 100000:100002]
 
     assert len(dsets) == 14
+    assert isinstance(ghi, np.ndarray)
+    assert isinstance(ws, np.ndarray)
+    assert isinstance(temp, np.ndarray)
     assert not (ghi < 0).any()
     assert (ghi < 1300).all()
     assert (ghi > 800).any()
@@ -79,6 +82,12 @@ def test_sup3rcc():
 
     with xr.open_dataset(fp, engine="rex", hsds=True) as ds:
         assert np.allclose(ds["ghi"].isel(gid=slice(100000, 100002)), ghi)
+        assert np.allclose(
+            ds["windspeed_88m"].isel(gid=slice(100000, 100002)), ws
+        )
+        assert np.allclose(
+            ds["temperature_2m"].isel(gid=slice(100000, 100002)), temp
+        )
 
 
 @pytest.mark.parametrize('fps', ["/nrel/wtk/conus/wtk_conus_200[8,9].h5",
