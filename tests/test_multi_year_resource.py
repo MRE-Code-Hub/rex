@@ -13,6 +13,7 @@ import tempfile
 
 from rex import TESTDATADIR
 from rex.multi_year_resource import (MultiYearH5, MultiYearNSRDB,
+                                     MultiYearResource,
                                      MultiYearWindResource)
 from rex.resource import Resource
 
@@ -356,6 +357,27 @@ def test_multi_file_year():
             assert np.allclose(test_data_wd, f['winddirection_90m'])
             assert (test_ti == f.time_index).all()
             assert test_meta.equals(f.meta)
+
+
+def test_annual_spatial_dataset(tmp_path):
+    """Test retrieval of a 1D spatial dataset from annual files."""
+    expected = []
+    for year in (2012, 2013):
+        source_fp = os.path.join(TESTDATADIR, f'wtk/ri_100_wtk_{year}.h5')
+        test_fp = tmp_path / f'rev_{year}.h5'
+        shutil.copy(source_fp, test_fp)
+
+        with h5py.File(test_fp, 'a') as h5:
+            cf_mean = np.arange(h5['meta'].shape[0]) + year
+            assert cf_mean.shape == (200, )
+            h5.create_dataset('cf_mean', data=cf_mean)
+            expected.append(cf_mean)
+
+    with MultiYearResource(str(tmp_path / 'rev_*.h5')) as res:
+        result = res['cf_mean']
+
+    assert result.shape == (2, 200)
+    assert np.allclose(result, expected)
 
 
 @pytest.mark.timeout(10)
