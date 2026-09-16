@@ -13,7 +13,7 @@ jobs:
       contents: read
     steps:
       - name: checkout rex
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7.0.1
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 1
@@ -21,7 +21,7 @@ jobs:
           path: rex
           persist-credentials: false
       - name: checkout reVX
-        uses: actions/checkout@v2
+        uses: actions/checkout@v7.0.0
         with:
           repository: NatLabRockies/reVX
           fetch-depth: 1
@@ -29,7 +29,7 @@ jobs:
           fetch-tags: true
           persist-credentials: false
       - name: Set up Python
-        uses: conda-incubator/setup-miniconda@v2
+        uses: conda-incubator/setup-miniconda@v4.0.1
         with:
           auto-update-conda: true
           python-version: 3.11
