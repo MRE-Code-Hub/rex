@@ -5,14 +5,13 @@ pytests for resource extractors
 import os
 import tempfile
 import traceback
+import importlib.util
 
 import numpy as np
 import pandas as pd
 import pytest
 from click.testing import CliRunner
 from pandas.testing import assert_frame_equal
-import PySAM.Windpower as PySamWindPower
-import PySAM.Pvwattsv8 as PySamPV8
 
 from rex import TESTDATADIR
 from rex.resource_extraction.resource_extraction import (
@@ -909,10 +908,13 @@ def test_windx_make_SAM_files(WindX_cls, max_workers):
     LOGGERS.clear()
 
 
+@pytest.mark.skipif(importlib.util.find_spec('PySAM') is None,
+                    reason="PySAM is not installed")
 def test_windx_run_SAM_files():
     """
     Test running WindX files through SAM
     """
+    import PySAM.Windpower as PySamWindPower
 
     h5_path = os.path.join(TESTDATADIR, 'wtk/ri_100_wtk_2012.h5')
     with tempfile.TemporaryDirectory() as td:
@@ -962,10 +964,13 @@ def test_nsrdbx_make_SAM_files(NSRDBX_cls, max_workers):
     LOGGERS.clear()
 
 
+@pytest.mark.skipif(importlib.util.find_spec('PySAM') is None,
+                    reason="PySAM is not installed")
 def test_nsrdbx_run_SAM_files():
     """
     Test running nsrdbx files through SAM
     """
+    import PySAM.Pvwattsv8 as PySamPV8
 
     h5_path = os.path.join(TESTDATADIR, 'nsrdb/ri_100_nsrdb_2012.h5')
     with tempfile.TemporaryDirectory() as td:
