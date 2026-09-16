@@ -34,6 +34,7 @@ jobs:
         shell: bash
         run: |
           python -m pip install --upgrade pip
+          pip install "setuptools==70.0.0"
           pip install -e .[test,hsds]
 
       - name: Start HSDS and run tests
