@@ -26,6 +26,8 @@ jobs:
           repository: NatLabRockies/reVX
           fetch-depth: 1
           path: reVX
+          fetch-tags: true
+          persist-credentials: false
       - name: Set up Python
         uses: conda-incubator/setup-miniconda@v2
         with:
