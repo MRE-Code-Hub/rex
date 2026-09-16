@@ -28,7 +28,7 @@ jobs:
       - name: Install reV dependencies
         working-directory: ./reV
         run: |
-          python -m pip install .
+          python -m pip install ".[bespoke,test]"
       - name: Run reV pytest
         working-directory: ./reV
         run: |
