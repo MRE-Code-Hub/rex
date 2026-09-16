@@ -32,7 +32,7 @@ def test_nsrdb():
         dsets = res.dsets
         ghi = res['ghi', :, int(1e5)]
 
-    assert len(dsets) == 22
+    assert len(dsets) == 28
     assert not any(ghi < 0)
     assert all(ghi < 1300)
     assert any(ghi > 800)
