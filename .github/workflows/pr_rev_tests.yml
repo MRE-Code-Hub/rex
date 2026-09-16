@@ -13,17 +13,23 @@ jobs:
       contents: read
     steps:
       - name: checkout rex
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7.0.1
         with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 1
+          fetch-tags: true
           path: rex
+          persist-credentials: false
       - name: checkout reV
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7.0.1
         with:
           repository: NatLabRockies/reV
           fetch-depth: 1
           path: reV
+          fetch-tags: true
+          persist-credentials: false
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v7.0.0
         with:
           python-version: 3.13
       - name: Install rex dependencies
