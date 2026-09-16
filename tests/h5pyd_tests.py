@@ -27,12 +27,12 @@ def test_file_list():
 
 def test_nsrdb():
     """Test retrieving NSRDB data"""
-    fp = '/nrel/nsrdb/GOES/conus/v4.0.0/nsrdb_conus_2020.h5'
+    fp = '/nrel/nsrdb/india/nsrdb_india_2014.h5'
     with NSRDB(fp, hsds=True) as res:
         dsets = res.dsets
         ghi = res['ghi', :, int(1e5)]
 
-    assert len(dsets) == 28
+    assert len(dsets) == 22
     assert not any(ghi < 0)
     assert all(ghi < 1300)
     assert any(ghi > 800)
