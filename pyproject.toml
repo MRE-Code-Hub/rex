@@ -34,7 +34,7 @@ dependencies = [
   "fsspec>=2021.09.0",
   "dask>=2026.8.0",
   "h5py>=3.13.0",
-  "h5pyd>=0.18.0",
+  "h5pyd>=0.18.0,<1",
   "numpy>=2.0.2,<3",
   "pandas>=3.0.5,<4",
   "packaging>=24.2",
@@ -60,7 +60,7 @@ dev = [
   "pylint",
 ]
 hsds = [
-  "hsds>=0.8.4",
+  "hsds>=0.8.4,<1",
 ]
 build = [
   "build>=1.2.2,<2",
