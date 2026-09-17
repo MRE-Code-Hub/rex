@@ -290,6 +290,9 @@ class SolarPosition:
         azm[arg > 1] = 0
         azm[arg < -1] = np.pi
 
+        sub_from_pi = np.array((((ha <= 0.0) & (ha >= -np.pi), (ha >= np.pi))))
+        azm = np.where(np.any(sub_from_pi, axis=0), np.pi - azm, np.pi + azm)
+
         return azm
 
     @staticmethod
