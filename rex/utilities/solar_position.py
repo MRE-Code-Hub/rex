@@ -285,7 +285,7 @@ class SolarPosition:
                / (np.cos(elv) * np.cos(lat)))
 
         azm = np.arccos(arg)
-        # Assign azzimuth = 180 deg if elv == 90 or -90
+        # Assign azimuth = 180 deg if elv == 90 or -90
         azm[np.cos(elv) == 0] = np.pi
         azm[arg > 1] = 0
         azm[arg < -1] = np.pi
