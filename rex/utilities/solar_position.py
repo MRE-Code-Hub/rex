@@ -32,7 +32,7 @@ class SolarPosition:
         if not isinstance(lat_lon, np.ndarray):
             lat_lon = np.array(lat_lon)
 
-        self._lat_lon = np.expand_dims(lat_lon, axis=0).T
+        self._lat_lon = np.expand_dims(lat_lon.astype(float), axis=0).T
 
     @property
     def time_index(self):
