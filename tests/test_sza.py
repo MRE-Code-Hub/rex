@@ -69,11 +69,16 @@ def test_sza(year, site):
 
     time_index, lat_lon, nsrdb_sza = extract_nsrdb(year, site=site)
 
-    sza = SolarPosition(time_index, lat_lon).zenith
+    spa_test = SolarPosition(time_index, lat_lon)
+    sza = spa_test.zenith
 
     assert sza.shape == nsrdb_sza.shape, 'Shapes do not match!'
     msg = 'Zenith angle differ by more than ~1 degree'
     assert np.allclose(sza, nsrdb_sza, rtol=0.01, atol=1), msg
+
+    az = spa_test.azimuth
+    assert az.shape == nsrdb_sza.shape, 'Shapes do not match!'
+    assert az.dtype == np.float64
 
 
 def execute_pytest(capture='all', flags='-rapP'):
