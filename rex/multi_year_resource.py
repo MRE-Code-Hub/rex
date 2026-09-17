@@ -273,6 +273,11 @@ class MultiYearH5(MultiTimeH5):
         ds_slice = parse_slice(ds_slice)
         out = []
         time_slice = ds_slice[0]
+        ds_shape = self.h5.shapes.get(ds_name)
+        meta_shape = self.h5.shapes.get('meta')
+        time_index_shape = self.h5.shapes.get('time_index')
+        ds_is_spatial = (ds_shape is not None and ds_shape == meta_shape
+                         and ds_shape != time_index_shape)
         if self._check_for_years(time_slice):
             years = time_slice
             year_slice = (slice(None), ) + ds_slice[1:]
@@ -304,7 +309,10 @@ class MultiYearH5(MultiTimeH5):
                 year_slice = (year_slice, ) + ds_slice[1:]
                 out.append(self[year]._get_ds(ds_name, year_slice))
 
-            out = np.concatenate(out, axis=0)
+            if ds_is_spatial:
+                out = np.stack(out, axis=0)
+            else:
+                out = np.concatenate(out, axis=0)
 
         return out
 
